@@ -1,33 +1,54 @@
+/* HTML document is loaded. DOM is ready.
+-------------------------------------------*/
+$(function(){
 
-  (function ($) {
-  
-  "use strict";
+    /* start typed element */
+    //http://stackoverflow.com/questions/24874797/select-div-title-text-and-make-array-with-jquery
+    var subElementArray = $.map($('.sub-element'), function(el) { return $(el).text(); });    
+    $(".element").typed({
+        strings: subElementArray,
+        typeSpeed: 30,
+        contentType: 'html',
+        showCursor: false,
+        loop: true,
+        loopCount: true,
+    });
+    /* end typed element */
 
-    // PRE LOADER
-    $(window).load(function(){
-      $('.preloader').fadeOut(1000); // set duration in brackets    
+    /* Smooth scroll and Scroll spy (https://github.com/ChrisWojcik/single-page-nav)    
+    ---------------------------------------------------------------------------------*/ 
+    $('.templatemo-nav').singlePageNav({
+        offset: $(".templatemo-nav").height(),
+        filter: ':not(.external)',
+        updateHash: false
     });
 
-    // CUSTOM LINK
-    $('.custom-link').click(function(){
-    var el = $(this).attr('href');
-    var elWrapped = $(el);
-    var header_height = $('.navbar').height() + 10;
-
-    scrollToDiv(elWrapped,header_height);
-    return false;
-
-    function scrollToDiv(element,navheight){
-      var offset = element.offset();
-      var offsetTop = offset.top;
-      var totalScroll = offsetTop-navheight;
-
-      $('body,html').animate({
-      scrollTop: totalScroll
-      }, 300);
-  }
-});
+    /* start navigation top js */
+    $(window).scroll(function(){
+        if($(this).scrollTop()>58){
+            $(".templatemo-nav").addClass("sticky");
+        }
+        else{
+            $(".templatemo-nav").removeClass("sticky");
+        }
+    });
     
-  })(window.jQuery);
+    /* Hide mobile menu after clicking on a link
+    -----------------------------------------------*/
+    $('.navbar-collapse a').click(function(){
+        $(".navbar-collapse").collapse('hide');
+    });
+    /* end navigation top js */
 
+    $('body').bind('touchstart', function() {});
 
+    /* wow
+    -----------------*/
+    new WOW().init();
+});
+
+/* start preloader */
+$(window).load(function(){
+	$('.preloader').fadeOut(1000); // set duration in brackets    
+});
+/* end preloader */
