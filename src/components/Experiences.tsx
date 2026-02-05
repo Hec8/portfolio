@@ -5,9 +5,9 @@ import imgJS from "../assets/techno/js.png";
 import imgREACT from "../assets/techno/react.png";
 import imgLARA from "../assets/techno/laravel.svg";
 import imgHTML from "../assets/techno/html.png";
-import imgNODE from "../assets/techno/node-js.png";
-import imgTYPE from "../assets/techno/typescript.svg";
+import imgNext from "../assets/techno/nextjs.png";
 import imgTAILWIND from "../assets/techno/tailwind.png";
+import imgBoot from "../assets/techno/Bootstrap.png";
 
 // import google from "../assets/companies/google.png";
 // import meta from "../assets/companies/meta.webp";
@@ -21,9 +21,9 @@ const skills = [
     { id: 3, name: "JavaScript", image: imgJS },
     { id: 4, name: "React", image: imgREACT },
     { id: 5, name: "Laravel", image: imgLARA },
-    { id: 6, name: "Node.js", image: imgNODE },
+    { id: 6, name: "Next.js", image: imgNext },
     { id: 7, name: "Tailwind CSS", image: imgTAILWIND },
-    { id: 8, name: "TypeScript", image: imgTYPE },
+    { id: 8, name: "Bootstrap", image: imgBoot },
 ];
 
 
@@ -69,9 +69,9 @@ const Experiences = () => {
             <Title title="EXPERIENCES" />
             <div>
                 <div className="flex flex-wrap gap-4 justify-center items-center mt-4 md:mt-0" id="Experiences">
-                    {skills.map((skill) => (
-                        <div key={skill.id} className="flex justify-center items-center flex-col">
-                            <div className="w-24 h24 p-2 rounded-full border-2 border-accent">
+                    {skills.map((skill, index) => (
+                        <div key={skill.id} className={`flex justify-center items-center flex-col animate-scaleIn delay-${(index + 1) * 100}`}>
+                            <div className="w-24 h24 p-2 rounded-full border-2 border-accent hover-lift transition-all duration-300 hover:border-4">
                                 <img src={skill.image} alt="" className="object-cover rounded-full h-full w-full" />
                             </div>
                             <span className="mt-2 text-sm">{skill.name}</span>

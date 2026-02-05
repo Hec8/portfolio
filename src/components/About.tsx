@@ -1,5 +1,5 @@
 import Title from "./Title"
-import img from "../assets/img.jpg"
+import img from "../assets/coding2.jpeg"
 import { CalendarSync, LetterText, Paintbrush } from "lucide-react";
 
 const aboutSections = [
@@ -28,12 +28,12 @@ const About = () => {
         <div className="bg-base-300 p-10 mb-10 md:mb-32" id="About">
             <Title title="A PROPOS" />
             <div className="md:h-screen flex justify-center items-center">
-                <div className="hidden md:block">
-                    <img src={img} alt="" className="w-96 object-cover rounded-xl" />
+                <div className="hidden md:block animate-scaleIn">
+                    <img src={img} alt="" className="w-96 h-96 object-contain rounded-full animate-pulse-custom" />
                 </div>
                 <div className="md:ml-8 space-y-4">
-                    {aboutSections.map((section) => (
-                        <div key={section.id} className="flex flex-col md:flex-row items-center bg-base-100 p-5 rounded-xl md:w-96 shadow-xl">
+                    {aboutSections.map((section, index) => (
+                        <div key={section.id} className={`flex flex-col md:flex-row items-center bg-base-100 p-5 rounded-xl md:w-96 shadow-xl hover-lift animate-fadeIn delay-${(index + 1) * 200}`}>
                             <div className="mb-2 md:mb-0">
                                 {section.icon}
                             </div>

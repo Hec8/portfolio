@@ -1,4 +1,4 @@
-import { Container, Github, Instagram, Linkedin } from "lucide-react"
+import { Container, Github, Instagram, Linkedin, MessageCircleMore} from "lucide-react"
 
 const Footer = () => {
     return (
@@ -16,6 +16,7 @@ const Footer = () => {
                         <a href="https://www.linkedin.com/in/hector-akpo-08b74128b"><Linkedin /></a>
                         <a href="https://github.com/Hec8"><Github /></a>
                         <a href="https://www.instagram.com/hector_akpo/"><Instagram /></a>
+                        <a href="https://wa.me/+22955611802"><MessageCircleMore /></a>
                     </div>
                 </nav>
             </footer>
