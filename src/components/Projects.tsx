@@ -3,6 +3,7 @@ import img1 from '../assets/projects/dihas.png';
 import img2 from '../assets/projects/chaine.png';
 import img3 from '../assets/projects/dash.png';
 import img4 from '../assets/projects/nel-tachart.png';
+import img5 from '../assets/projects/Image collée.png';
 import { Github, Video } from "lucide-react";
 
 const projects = [
@@ -42,6 +43,15 @@ const projects = [
         repoLink: 'https://github.com/Hec8/nel-tachart',
         image: img4,
     },
+    {
+        id: 5,
+        title: 'Blog Truth of news',
+        description: 'Il s\'agit du blog d\'un média béninois qui traite de l\'actualité au Bénin et dans le monde.',
+        technologies: ['Next.js', 'Tailwind CSS', 'Firebase'],
+        demoLink: 'https://truthofnews.vercel.app',
+        repoLink: 'https://github.com/Hec8/truthofnews',
+        image: img5,
+    }
 ];
 
 
